@@ -19,12 +19,12 @@ def compute_norm(arr: np.ndarray, norm_type: str) -> float:
         case 'l1':
             return float(np.sum(np.abs(arr)))
         case 'l2':
-            return float(np.sqrt(np.sum(np.power(arr, 2))))
+            return float(np.sqrt(np.sum(arr**2)))
         case 'linf':
             return float(np.max(np.abs(arr), axis=None))
         case 'frobenius':
             if arr.ndim != 2: raise ValueError()
-            return float(np.sqrt(np.sum(np.power(arr, 2))))
+            return float(np.sqrt(np.sum(arr**2)))
         case _:
             raise ValueError()
 
